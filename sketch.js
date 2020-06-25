@@ -3,6 +3,7 @@ let imagemPersonagem;
 let imagemInimigo;
 let imagemInimigoGrande;
 let imagemInimigoVoador;
+let imagemGameOver;
 
 let cenario;
 let somDoJogo;
@@ -117,6 +118,7 @@ const inimigos = [];
 
 function preload() {
   imagemCenario = loadImage("imagens/cenario/floresta.png");
+  imagemGameOver = loadImage("imagens/assets/game-over.png");
   imagemPersonagem = loadImage("imagens/personagem/correndo.png");
   imagemInimigo = loadImage("imagens/inimigos/gotinha.png");
   imagemInimigoGrande = loadImage("imagens/inimigos/troll.png");
@@ -133,8 +135,8 @@ function setup() {
   personagem = new Personagem(matrizPeronagem, imagemPersonagem, 50, 30, 220, 270, 220, 270);
   
   const inimigo = new Inimigo (matrizInimigo, imagemInimigo, width - 52, 30, 82, 82, 104, 104, 10, 200);
-  const inimigoGrande = new Inimigo (matrizInimigoGrande, imagemInimigoGrande, width - 52, 0, 300, 300, 400, 400, 10, 3187);
-  const inimigoVoador = new Inimigo (matrizInimigoVoador, imagemInimigoVoador, width - 52, 400, 102, 102, 200, 150, 10, 728);
+  const inimigoGrande = new Inimigo (matrizInimigoGrande, imagemInimigoGrande, width - 52, 0, 300, 300, 400, 400, 20, 3187);
+  const inimigoVoador = new Inimigo (matrizInimigoVoador, imagemInimigoVoador, width - 52, 530, 102, 102, 200, 150, 10, 728);
 
   inimigos.push (inimigoGrande);
   inimigos.push (inimigo);
@@ -156,6 +158,7 @@ function draw() {
   cenario.move();
 
   pontuacao.exibe();
+  pontuacao.adicionarPonto();
 
   personagem.exibe();
   personagem.aplicaGravidade();
@@ -166,6 +169,7 @@ function draw() {
 
     if(personagem.estaColidindo(inimigo)) {
       console.log("colidiu")
+      image(imagemGameOver, width /2 - 200, height /3,)
       noLoop();
     }
   })
