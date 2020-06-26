@@ -6,7 +6,7 @@ class Personagem extends Animacao{
         this.y = this.yInicial;
 
         this.velocidadeDoPulo = 0;
-        this.gravidade = 5;
+        this.gravidade = 4;
         this.alturaDoPulo = -50;
         this.pulos = 0;
     }
@@ -27,8 +27,8 @@ class Personagem extends Animacao{
         }
     }
     estaColidindo(inimigo) {
-        const precisao = .7;
-        const colisao = collideRectRect(this.x, this.y, this.largura * .7, this.altura * .7, inimigo.x, inimigo.y, inimigo.largura * .7, inimigo.altura * .7);
+        const precisao = .5;
+        const colisao = collideRectRect(this.x, this.y, this.largura * .7, this.altura * .7, inimigo.x, inimigo.y, inimigo.largura * precisao, inimigo.altura * precisao);
         return colisao;
     }
 }
