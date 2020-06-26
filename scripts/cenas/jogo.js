@@ -4,7 +4,7 @@ class Jogo {
     }
 
     setup(){
-        cenario = new Cenario(imagemCenario, 3);
+        cenario = new Cenario(imagemCenario, 6);
         pontuacao = new Pontuacao();
 
         personagem = new Personagem(matrizPeronagem, imagemPersonagem, 50, 30, 220, 270, 220, 270);
