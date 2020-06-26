@@ -5,6 +5,13 @@ function setup() {
  */
   jogo = new Jogo();
   jogo.setup();
+
+  telaInicial = new TelaInicial();
+
+  cenas = {
+    jogo,
+    telaInicial
+  };
 }
 
 function keyPressed() {
@@ -12,5 +19,5 @@ function keyPressed() {
 }
 
 function draw() {
-  jogo.draw();
+  cenas[cenaAtual].draw();
 }
