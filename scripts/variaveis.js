@@ -8,6 +8,7 @@ let imagemTelaInicial;
 let fonteTelaInicial;
 let jogo;
 let telaInicial;
+let botaoGerenciador;
 
 let cenario;
 let somDoJogo;
