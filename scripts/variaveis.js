@@ -21,6 +21,7 @@ let inimigo;
 let inimigoGrande;
 let inimigoVoador;
 let pontuacao;
+let fita;
 
 let cenaAtual = "telaInicial";
 let cenas;
