@@ -5,11 +5,14 @@ let imagemInimigoGrande;
 let imagemInimigoVoador;
 let imagemGameOver;
 let imagemTelaInicial;
+let imagemVida;
 let fonteTelaInicial;
 let jogo;
 let telaInicial;
 let botaoGerenciador;
 
+
+let vida;
 let cenario;
 let somDoJogo;
 let somDoPulo;
